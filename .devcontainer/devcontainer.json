@@ -1,0 +1,7 @@
+{
+  "name": "Golang htmx tailwind",
+  "context": "..",
+  "dockerFile": "../Dockerfile.dev",
+  "mounts": ["source=${localWorkspaceFolder},target=/app,type=bind"],
+  "workspaceFolder": "/app"
+}

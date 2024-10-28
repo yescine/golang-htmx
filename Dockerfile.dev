@@ -1,0 +1,21 @@
+# Use an official Golang image as a base
+FROM golang:1.23
+
+# Set the Current Working Directory inside the container
+WORKDIR /app
+
+# Copy go.mod and go.sum files if you have them
+COPY go.mod ./ 
+# COPY go.sum ./
+
+# Download all dependencies (if you have go.mod)
+RUN go mod download
+
+# Copy the source code
+COPY . .
+
+# Command to run the app
+# CMD ["go", "run", "main.go"]
+
+# Keep the container running by default
+CMD ["tail", "-f", "/dev/null"]
